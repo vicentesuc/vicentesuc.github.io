@@ -193,17 +193,18 @@
                             <h3 class="text-uppercase resume-section-heading mb-4">EDUCACION</h3>
                             <div class="item">
                                 <div class="item-heading row align-items-center mb-2">
-                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Joedayz AWS Academy</h4>
+                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Certificaciones Amazon Web Services</h4>
                                     <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
                                         2022-2025
                                     </div>
 
                                 </div>
                                 <div class="item-content">
-                                    <p>
-                                        AWS Cloud Practiioner  Certification
-                                        AWS Cloud Architect Associate Certification
-                                        AWS Cloud Architect Profesional Certification</p>
+                                    <ul class="resume-list">
+                                        <li>AWS Cloud Practitioner Certification</li>
+                                        <li>AWS Cloud Architect Associate Certification</li>
+                                        <li>AWS Cloud Developer Associate Certification</li>
+                                    </ul>
                                 </div>
                             </div><!--//item-->
                             <div class="item">
@@ -215,8 +216,16 @@
 
                                 </div>
                                 <div class="item-content">
-                                    <p>Oracle Certified Associate Java SE8 and JEE7 Programmer • Java SE 8 Fundamentals • Java SE 8 Programming • Web Component Development with Servlets & JSPs, Java EE 6 • Java EE 7: Back­End Server Application Development • JavaScript and HTML5: Develop Web Applications • Java EE 7: Front­end Web Application Development • Developing Applications with Java EE 6 on WebLogic Server 12c</p>
-
+                                    <ul class="resume-list">
+                                        <li>Oracle Certified Associate Java SE8 and JEE7 Programmer</li>
+                                        <li>Java SE 8 Fundamentals</li>
+                                        <li>Java SE 8 Programming</li>
+                                        <li>Web Component Development with Servlets &amp; JSPs, Java EE 6</li>
+                                        <li>Java EE 7: Back­End Server Application Development</li>
+                                        <li>JavaScript and HTML5: Develop Web Applications</li>
+                                        <li>Java EE 7: Front­end Web Application Development</li>
+                                        <li>Developing Applications with Java EE 6 on WebLogic Server 12c</li>
+                                    </ul>
                                 </div>
                             </div><!--//item-->
                             <div class="item mb-3">
@@ -234,6 +243,26 @@
 
 
                         </section><!--//project-section-->
+
+                        <section class="community-section py-3">
+                            <h3 class="text-uppercase resume-section-heading mb-4">Actividades en Comunidades</h3>
+                            <div class="item mb-3">
+                                <div class="item-heading row align-items-center mb-2">
+                                    <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Organizador</h4>
+                                    <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">
+                                        2025 - 2026
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <ul class="resume-list">
+                                        <li>AWS Community Day 2026 Guatemala</li>
+                                        <li>JConf 2026 Guatemala</li>
+                                        <li>AWS Community Day 2025 Guatemala</li>
+                                        <li>JConf 2025 Guatemala</li>
+                                    </ul>
+                                </div>
+                            </div><!--//item-->
+                        </section><!--//community-section-->
                     </div><!--//resume-main-->
                     <aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
                         <section class="skills-section py-3">
@@ -311,6 +340,14 @@
 
     </div><!--//container-->
 
+    <div class="container text-center my-3">
+        <div class="row">
+            <div class="col">
+                <button onclick="imprimirCV()" class="btn btn-primary"><i class="fas fa-file-pdf me-2"></i>Imprimir / Guardar PDF</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer text-center py-4">
         <small class="copyright">Vicente Suc Copyright &copy;</small>
     </footer>
@@ -325,6 +362,31 @@
 <!-- Dark Mode -->
 <script src="assets/plugins/js-cookie.min.js"></script>
 <script src="assets/js/dark-mode.js"></script>
+
+<script>
+function imprimirCV() {
+    const contenido = document.querySelector('.resume-container').innerHTML;
+    const ventana = window.open('', '_blank');
+    ventana.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>CV - Vicente Suc</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+            <link rel="stylesheet" href="assets/css/theme-1.css">
+            <style>
+                body { background: #fff !important; }
+                .fas, .fa-brands { font-size: 1rem !important; }
+                @media print { body { margin: 0; } }
+            </style>
+        </head>
+        <body onload="window.print(); window.close();">${contenido}</body>
+        </html>
+    `);
+    ventana.document.close();
+}
+</script>
 
 <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
 <script src="assets/js/demo/style-switcher.js"></script>
